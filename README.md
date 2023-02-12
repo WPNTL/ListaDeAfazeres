@@ -25,3 +25,8 @@
 - Responsivo
 - Efeitos sonoros na checkbox
 
+
+## Melhorias
+
+- Adicionar efeitos sonoros na exclusão
+
