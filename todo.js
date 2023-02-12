@@ -140,7 +140,7 @@ function createTodoElement(todo) {
   todoRemoveBtn.onclick = (e) => {
     let id = e.target.closest('.todo-item').dataset.id
     removeTodo(id)
-    audio2.play(); // Play sound when completed
+    audio2.play(); // Play sound when excluded
 
   };
 
