@@ -1,4 +1,5 @@
 // Variables
+// Variáveis
 let todoItems = []
 const todoInput = document.querySelector('.todo-input')
 const completedTodosDiv = document.querySelector('.completed-todos')
@@ -7,6 +8,7 @@ const audio = new Audio('sound.mp3');
 const audio2 = new Audio('sound2.mp3');
 
 // Get to-do list on first boot
+// Pega a lista de tarefas na incialização
 window.onload = () => {
   let storageTodoItems = localStorage.getItem('todoItems')
   if (storageTodoItems !== null) {
@@ -17,6 +19,7 @@ window.onload = () => {
 }
 
 // Get the content typed into the input
+// Pega o conteúdo digitado no input
 todoInput.onkeyup = (e) => {
   let value = e.target.value.replace(/^\s+/, "");
   if (value && e.keyCode == 13) { // Enter
@@ -45,6 +48,7 @@ function removeTodo(id) {
 }
 
 // Mark as completed
+// Marca como completo
 function markAsCompleted(id) {
   todoItems = todoItems.filter(todo => {
     if (todo.id === Number(id)) {
@@ -55,6 +59,7 @@ function markAsCompleted(id) {
   })
 
   audio.play(); // Play sound when completed
+                //Toca o som quando completado
 
   saveAndRender()
 }
@@ -110,6 +115,7 @@ function saveAndRender() {
 }
 
 // Create todo list item
+// Cria item todo
 function createTodoElement(todo) {
   // Create todo list container
   const todoDiv = document.createElement("DIV");
@@ -141,6 +147,7 @@ function createTodoElement(todo) {
     let id = e.target.closest('.todo-item').dataset.id
     removeTodo(id)
     audio2.play(); // Play sound when excluded
+                   // Toca som quando excluído 
 
   };
 

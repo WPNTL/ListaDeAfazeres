@@ -9,7 +9,10 @@
   box-sizing: border-box;
 }
 
-body {
+body { 
+  
+  /* efeito de gradiente no background*/
+  
   font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
@@ -22,6 +25,8 @@ body {
 
 }
 
+
+/* Animação de transição do gradiente*/
 @keyframes colors {
   
   0%{
