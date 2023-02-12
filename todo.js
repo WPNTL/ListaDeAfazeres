@@ -4,6 +4,7 @@ const todoInput = document.querySelector('.todo-input')
 const completedTodosDiv = document.querySelector('.completed-todos')
 const unCompletedTodosDiv = document.querySelector('.uncompleted-todos')
 const audio = new Audio('sound.mp3');
+const audio2 = new Audio('sound2.mp3');
 
 // Get to-do list on first boot
 window.onload = () => {
@@ -139,6 +140,8 @@ function createTodoElement(todo) {
   todoRemoveBtn.onclick = (e) => {
     let id = e.target.closest('.todo-item').dataset.id
     removeTodo(id)
+    audio2.play(); // Play sound when completed
+
   };
 
   todoTextDiv.prepend(todoInputCheckbox);
@@ -146,4 +149,7 @@ function createTodoElement(todo) {
   todoDiv.appendChild(todoRemoveBtn);
 
   return todoDiv
+
+  
+  
 }
